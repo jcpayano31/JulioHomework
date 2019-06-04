@@ -1,0 +1,26 @@
+﻿@model BirthdayCard.Models.BirthDayCardSend
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css" />
+    <title>SendForm</title>
+</head>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+@using (Html.BeginForm())
+{
+    @:Send a Birthday Card
+    @Html.ValidationSummary();
+    <p>From: @Html.TextBoxFor(t => t.FromUser)</p>
+    <p>To  : @Html.TextBoxFor(t => t.ToUser)</p>
+    <p>Menssege: @Html.TextBoxFor(t => t.BCardMenssege)</p>
+
+    <input type="submit" value="Send Birthday Card" />
+}
